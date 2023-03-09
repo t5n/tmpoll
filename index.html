@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Polling App</title>
+    <title>Polling App</title>
   </head>
   <body>
-    <h1>What is your favorite color?</h1>
-    <div id="options">
-      <input type="radio" name="color" value="red"> Red<br>
-      <input type="radio" name="color" value="blue"> Blue<br>
-      <input type="radio" name="color" value="green"> Green<br>
+    <h1>Polling App</h1>
+    <div id="poll">
+      <h2 id="poll-question"></h2>
+      <form>
+        <div id="poll-options"></div>
+        <button type="submit" onclick="submitVote()">Submit Vote</button>
+      </form>
     </div>
-    <button onclick="vote()">Vote</button>
-    <div id="results"></div>
+    <div id="results">
+      <h2>Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody id="results-table"></tbody>
+      </table>
+    </div>
+    <div id="admin">
+      <h2>Admin</h2>
+      <form>
+        <label for="option-input">New Option:</label>
+        <input type="text" id="option-input">
+        <button type="submit" onclick="addOption()">Add Option</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@azure/cosmos@4.1.0/dist/cosmos.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
